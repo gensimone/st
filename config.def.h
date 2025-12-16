@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font:pixelsize=17:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "ProFont IIx Nerd Font Mono:pixelsize=16:antialias=true:autohint=true";
+static int borderpx = 40;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -95,23 +95,22 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* solarized dark */
-	"#073642",  /*  0: black    */
-	"#dc322f",  /*  1: red      */
-	"#859900",  /*  2: green    */
-	"#b58900",  /*  3: yellow   */
-	"#268bd2",  /*  4: blue     */
-	"#d33682",  /*  5: magenta  */
-	"#2aa198",  /*  6: cyan     */
-	"#eee8d5",  /*  7: white    */
-	"#002b36",  /*  8: brblack  */
-	"#cb4b16",  /*  9: brred    */
-	"#586e75",  /* 10: brgreen  */
-	"#657b83",  /* 11: bryellow */
-	"#839496",  /* 12: brblue   */
-	"#6c71c4",  /* 13: brmagenta*/
-	"#93a1a1",  /* 14: brcyan   */
-	"#fdf6e3",  /* 15: brwhite  */
+        "#1a1a1a",
+        "#cc6666",
+        "#b5bd68",
+        "#f0c674",
+        "#81a2be",
+        "#b294bb",
+        "#8abeb7",
+        "#c5c8c6",
+        "#969896",
+        "#cc6666",
+        "#b5bd68",
+        "#f0c674",
+        "#81a2be",
+        "#b294bb",
+        "#8abeb7",
+        "#ffffff",
 };
 
 
@@ -119,10 +118,10 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 12;
-unsigned int defaultbg = 8;
-unsigned int defaultcs = 14;
-static unsigned int defaultrcs = 15;
+unsigned int defaultfg = 7;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 7;
+static unsigned int defaultrcs = 1;
 
 /*
  * Default shape of cursor
