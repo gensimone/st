@@ -98,33 +98,61 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
-static const char *colorname[] = {
-    [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-    [1] = "#cc241d", /* red     */
-    [2] = "#98971a", /* green   */
-    [3] = "#d79921", /* yellow  */
-    [4] = "#458588", /* blue    */
-    [5] = "#b16286", /* magenta */
-    [6] = "#689d6a", /* cyan    */
-    [7] = "#a89984", /* white   */
-    [8]  = "#928374", /* black   */
-    [9]  = "#fb4934", /* red     */
-    [10] = "#b8bb26", /* green   */
-    [11] = "#fabd2f", /* yellow  */
-    [12] = "#83a598", /* blue    */
-    [13] = "#d3869b", /* magenta */
-    [14] = "#8ec07c", /* cyan    */
-    [15] = "#ebdbb2", /* white   */
-};
+/* static const char *colorname[] = { */
+/*     [0] = "#282828", /\* hard contrast: #1d2021 / soft contrast: #32302f *\/
+ */
+/*     [1] = "#cc241d", /\* red     *\/ */
+/*     [2] = "#98971a", /\* green   *\/ */
+/*     [3] = "#d79921", /\* yellow  *\/ */
+/*     [4] = "#458588", /\* blue    *\/ */
+/*     [5] = "#b16286", /\* magenta *\/ */
+/*     [6] = "#689d6a", /\* cyan    *\/ */
+/*     [7] = "#a89984", /\* white   *\/ */
+/*     [8]  = "#928374", /\* black   *\/ */
+/*     [9]  = "#fb4934", /\* red     *\/ */
+/*     [10] = "#b8bb26", /\* green   *\/ */
+/*     [11] = "#fabd2f", /\* yellow  *\/ */
+/*     [12] = "#83a598", /\* blue    *\/ */
+/*     [13] = "#d3869b", /\* magenta *\/ */
+/*     [14] = "#8ec07c", /\* cyan    *\/ */
+/*     [15] = "#ebdbb2", /\* white   *\/ */
+/* }; */
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 257;
+/* unsigned int defaultfg = 15; */
+/* unsigned int defaultbg = 0; */
+/* unsigned int defaultcs = 15; */
+/* static unsigned int defaultrcs = 257; */
+/* Modus‑Vivendi Base16 colors */
+
+static const char *colorname[] = {
+    "#000000", /* 00: base00 background */
+    "#ff8059", /* 01: base08 red */
+    "#44bc44", /* 02: base0B green */
+    "#d0bc00", /* 03: base09 / base0A yellow/orange */
+    "#2fafff", /* 04: base0D blue */
+    "#feacd0", /* 05: base0E magenta */
+    "#00d3d0", /* 06: base0C cyan */
+    "#bfbfbf", /* 07: base07 bright gray / light fg */
+
+    "#1e1e1e", /* 08: base01 darker bg */
+    "#303030", /* 09: base02 inactive bg */
+    "#feacd0", /* 0A: base03 active bg */
+    "#989898", /* 0B: base04 dim fg */
+    "#ffffff", /* 0C: base05 fg */
+    "#c6daff", /* 0D: base06 bright fg accent */
+    "#6ae4b9", /* 0E: base0F accent */
+    "#ffffff", /* 0F: unused / white fallback */
+};
+
+/* Default foreground, background, cursor */
+unsigned int defaultfg = 12;        /* base05 */
+unsigned int defaultbg = 0;         /* base00 */
+unsigned int defaultcs = 12;        /* cursor same as fg */
+static unsigned int defaultrcs = 7; /* reverse cursor: light gray */
 
 /*
  * Default shape of cursor
