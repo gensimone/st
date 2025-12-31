@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font =
+static char* font =
     "JetBrainsMono Nerd Font:pixelsize=16:antialias=true:autohint=true";
 static int borderpx = 35;
 
@@ -20,14 +20,14 @@ static float alpha = 1.0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
-char *utmp = NULL;
+static char* shell = "/bin/sh";
+char* utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
-char *scroll = NULL;
-char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
+char* scroll = NULL;
+char* stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
 /* identification sequence returned in DA and DECID */
-char *vtiden = "\033[?6c";
+char* vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
@@ -38,7 +38,7 @@ static float chscale = 1.0;
  *
  * More advanced example: L" `'\"()[]{}"
  */
-wchar_t *worddelimiters = L" ";
+wchar_t* worddelimiters = L" ";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -78,7 +78,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char* termname = "st-256color";
 
 /*
  * spaces per tab
@@ -97,62 +97,30 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
-/* Terminal colors (16 first used in escape sequence) */
-/* static const char *colorname[] = { */
-/*     [0] = "#282828", /\* hard contrast: #1d2021 / soft contrast: #32302f *\/
- */
-/*     [1] = "#cc241d", /\* red     *\/ */
-/*     [2] = "#98971a", /\* green   *\/ */
-/*     [3] = "#d79921", /\* yellow  *\/ */
-/*     [4] = "#458588", /\* blue    *\/ */
-/*     [5] = "#b16286", /\* magenta *\/ */
-/*     [6] = "#689d6a", /\* cyan    *\/ */
-/*     [7] = "#a89984", /\* white   *\/ */
-/*     [8]  = "#928374", /\* black   *\/ */
-/*     [9]  = "#fb4934", /\* red     *\/ */
-/*     [10] = "#b8bb26", /\* green   *\/ */
-/*     [11] = "#fabd2f", /\* yellow  *\/ */
-/*     [12] = "#83a598", /\* blue    *\/ */
-/*     [13] = "#d3869b", /\* magenta *\/ */
-/*     [14] = "#8ec07c", /\* cyan    *\/ */
-/*     [15] = "#ebdbb2", /\* white   *\/ */
-/* }; */
-
-/*
- * Default colors (colorname index)
- * foreground, background, cursor
- */
-/* unsigned int defaultfg = 15; */
-/* unsigned int defaultbg = 0; */
-/* unsigned int defaultcs = 15; */
-/* static unsigned int defaultrcs = 257; */
-/* Modus‑Vivendi Base16 colors */
-
-static const char *colorname[] = {
-    "#000000", /* 00: base00 background */
-    "#ff8059", /* 01: base08 red */
-    "#44bc44", /* 02: base0B green */
-    "#d0bc00", /* 03: base09 / base0A yellow/orange */
-    "#2fafff", /* 04: base0D blue */
-    "#feacd0", /* 05: base0E magenta */
-    "#00d3d0", /* 06: base0C cyan */
-    "#bfbfbf", /* 07: base07 bright gray / light fg */
-
-    "#1e1e1e", /* 08: base01 darker bg */
-    "#303030", /* 09: base02 inactive bg */
-    "#feacd0", /* 0A: base03 active bg */
-    "#989898", /* 0B: base04 dim fg */
-    "#ffffff", /* 0C: base05 fg */
-    "#c6daff", /* 0D: base06 bright fg accent */
-    "#6ae4b9", /* 0E: base0F accent */
-    "#ffffff", /* 0F: unused / white fallback */
+static const char* colorname[] = {
+    /* solarized dark */
+    "#073642", /*  0: black    */
+    "#dc322f", /*  1: red      */
+    "#859900", /*  2: green    */
+    "#b58900", /*  3: yellow   */
+    "#268bd2", /*  4: blue     */
+    "#d33682", /*  5: magenta  */
+    "#2aa198", /*  6: cyan     */
+    "#eee8d5", /*  7: white    */
+    "#002b36", /*  8: brblack  */
+    "#cb4b16", /*  9: brred    */
+    "#586e75", /* 10: brgreen  */
+    "#657b83", /* 11: bryellow */
+    "#839496", /* 12: brblue   */
+    "#6c71c4", /* 13: brmagenta*/
+    "#93a1a1", /* 14: brcyan   */
+    "#fdf6e3", /* 15: brwhite  */
 };
 
-/* Default foreground, background, cursor */
-unsigned int defaultfg = 12;        /* base05 */
-unsigned int defaultbg = 0;         /* base00 */
-unsigned int defaultcs = 12;        /* cursor same as fg */
-static unsigned int defaultrcs = 7; /* reverse cursor: light gray */
+unsigned int defaultfg = 12;
+unsigned int defaultbg = 8;
+unsigned int defaultcs = 14;
+static unsigned int defaultrcs = 15;
 
 /*
  * Default shape of cursor
